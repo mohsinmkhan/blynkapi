@@ -47,13 +47,13 @@ class Blynk(object):
 		return self.__check(request)
 
 	def set_val(self, value):
-		#value = "[\""+value+"\"]"
+		value = "[\""+value+"\"]"
 		request = Request(self.protocol+"://"+self.server+":"+self.port+"/"+self.token+"/update/"+self.pin, data=str(value), headers=self.headers)
 		request.get_method = lambda: 'PUT'
 		return self.__check(request)
 
 	def set_val_old(self, value):
-		#value = "[\""+value+"\"]"
+		value = "[\""+value+"\"]"
 		request = Request(self.protocol+"://"+self.server+":"+self.port+"/"+self.token+"/pin/"+self.pin, data=str(value), headers=self.headers)
 		request.get_method = lambda: 'PUT'
 		return self.__check(request)
